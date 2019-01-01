@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="mySpring">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/shiro_jdbcRealm/lib2" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/shiro_jdbcRealm/lib2" recursive="false" />
+  </library>
+</component>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/shiro_javaconfig/shiro_javaconfig.iml" filepath="$PROJECT_DIR$/shiro_javaconfig/shiro_javaconfig.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shiro_jdbcRealm/shiro_jdbcRealm.iml" filepath="$PROJECT_DIR$/shiro_jdbcRealm/shiro_jdbcRealm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/shiro_servlet/shiro_servlet.iml" filepath="$PROJECT_DIR$/shiro_servlet/shiro_servlet.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webDemo/webDemo.iml" filepath="$PROJECT_DIR$/webDemo/webDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/webDemo2/webDemo2.iml" filepath="$PROJECT_DIR$/webDemo2/webDemo2.iml" />
+    </modules>
+  </component>
+</project>

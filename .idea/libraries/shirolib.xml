@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="shirolib">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/shiro_jdbcRealm/lib" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+    <jarDirectory url="file://$PROJECT_DIR$/shiro_jdbcRealm/lib" recursive="false" />
+  </library>
+</component>
