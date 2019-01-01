@@ -36,6 +36,5 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="mySpring" level="project" />
-    <orderEntry type="library" name="shirolib" level="project" />
   </component>
 </module>

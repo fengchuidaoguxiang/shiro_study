@@ -9,10 +9,21 @@
     </context-param>
     <!--配置路径-->
     <context-param>
-        <param-name>shiroConfigLoactions</param-name>
-        <param-value>classpath:</param-value>
+        <param-name>shiroConfigLocations</param-name>
+        <param-value>classpath:shiro-web.ini</param-value>
     </context-param>
+
     <listener>
         <listener-class>org.apache.shiro.web.env.EnvironmentLoaderListener</listener-class>
     </listener>
+    <filter>
+        <filter-name>ShiroFilter</filter-name>
+        <filter-class>org.apache.shiro.web.servlet.ShiroFilter</filter-class>
+    </filter>
+    <!--过滤规则-->
+    <filter-mapping>
+        <filter-name>ShiroFilter</filter-name>
+        <!--过滤所有以html结尾的请求-->
+        <url-pattern>*.html</url-pattern>
+    </filter-mapping>
 </web-app>

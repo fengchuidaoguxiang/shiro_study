@@ -1,3 +1,4 @@
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: Admin
@@ -11,6 +12,13 @@
     <title>$Title$</title>
   </head>
   <body>
-  hello servlet
+  <h2>hello servlet</h2> <a href="/logout.html">退出登录</a>
+  <shiro:hasPermission name="menu:list">
+    <a href="#">menu</a>
+  </shiro:hasPermission>
+
+  <shiro:hasRole name="admin">
+    <a href="#">role</a>
+  </shiro:hasRole>
   </body>
 </html>
