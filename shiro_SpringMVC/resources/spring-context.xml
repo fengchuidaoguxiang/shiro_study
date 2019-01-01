@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context
+       http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/aop
+       http://www.springframework.org/schema/aop/spring-aop.xsd
+">
+    <bean id="iniRealm" class="org.apache.shiro.realm.text.IniRealm">
+        <constructor-arg name="resourcePath" value="classpath:shiro-web.ini"/>
+    </bean>
+
+    <bean id="defaultWebSecurityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realm" ref="iniRealm"/>
+    </bean>
+
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="defaultWebSecurityManager"/>
+        <!--如果没有登录，跳转到登录地址-->
+        <property name="loginUrl" value="/gologin.html"/>
+        <!--登录成功后，跳转的地址-->
+        <property name="successUrl" value="/index.html"/>
+        <!--验证失败，跳转的地址-->
+        <property name="unauthorizedUrl" value="/error.html"/>
+        <property name="filterChainDefinitions">
+            <value>
+                <!--# anon:不需要验证-->
+                /login.html=anon
+                /gologin.html=anon
+                <!--# authc:用户必须登录以后，才能访问的页面-->
+                /index.html=authc
+                <!--# authc,roles[admin]:只有admin用户才能看到的页面-->
+                /role.html=authc,roles[admin]
+                <!--# authc,roles[admin],perms[menu:*]：有admin角色用户 或者 有menu权限的用户 才能看到的页面-->
+                /menu/**=authc,roles[admin],perms[menu:*]
+            </value>
+        </property>
+    </bean>
+
+</beans>
